@@ -1,0 +1,43 @@
+/* Navbar.css */
+
+.navbar-oldmoney {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #3e2f23; /* Rich dark brown */
+  color: #fdf6ee; /* Creamy white */
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #d3b17d; /* Muted gold border */
+}
+
+.logo-oldmoney {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: #fdf6ee;
+}
+
+.nav-links-oldmoney {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-oldmoney {
+  margin-left: 24px;
+  font-size: 1rem;
+  color: #fdf6ee;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+.nav-link-oldmoney:hover {
+  color: #d3b17d; /* Gold hover */
+  border-bottom: 1px solid #d3b17d;
+}
+
+.logout-link {
+  cursor: pointer;
+}
