@@ -29,7 +29,7 @@ app.use('/api/users', usersRouter);
 
 
 // Connect to local MongoDB
-mongoose.connect('mongodb://localhost:27017/expenseTracker', {
+mongoose.connect('mongodb://127.0.0.1:27017/expenseTracker', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
