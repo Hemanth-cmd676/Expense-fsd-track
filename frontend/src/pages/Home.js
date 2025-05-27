@@ -184,7 +184,7 @@ const Home = () => {
         category: form.category,
         note: form.note,
       });
-      setForm({ title: '', amount: '', category: 'Food', note: '' });
+      setForm({ title: '', amount: '', category: '', note: '' });
       fetchExpenses();
     } catch (err) {
       console.error('Add expense error:', err);
@@ -277,47 +277,54 @@ const Home = () => {
 
         <form onSubmit={handleSubmit} style={styles.form}>
           <input
-            type="text"
-            name="title"
-            placeholder="Title"
-            value={form.title}
-            onChange={handleChange}
-            required
-            style={{
-              ...styles.input,
-              ...(focusedInput === 'title' ? styles.inputFocus : {}),
-            }}
-            onFocus={() => setFocusedInput('title')}
-            onBlur={() => setFocusedInput(null)}
-          />
-          <input
-            type="number"
-            name="amount"
-            placeholder="Amount"
-            value={form.amount}
-            onChange={handleChange}
-            required
-            style={{
-              ...styles.input,
-              ...(focusedInput === 'amount' ? styles.inputFocus : {}),
-            }}
-            onFocus={() => setFocusedInput('amount')}
-            onBlur={() => setFocusedInput(null)}
-          />
-          <select
-                        name="category"
-            value={form.category}
-            onChange={handleChange}
-            style={styles.select}
-          >
-            <option value="Food">Food</option>
-            <option value="Transport">Transport</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Health">Health</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Utilities">Utilities</option>
-            <option value="Others">Others</option>
-          </select>
+  type="text"
+  name="title"
+  placeholder="Title"
+  value={form.title}
+  onChange={handleChange}
+  required
+  style={{
+    ...styles.input,
+    ...(focusedInput === 'title' ? styles.inputFocus : {}),
+  }}
+  onFocus={() => setFocusedInput('title')}
+  onBlur={() => setFocusedInput(null)}
+/>
+
+<input
+  type="number"
+  name="amount"
+  placeholder="Amount"
+  value={form.amount}
+  onChange={handleChange}
+  required
+  style={{
+    ...styles.input,
+    ...(focusedInput === 'amount' ? styles.inputFocus : {}),
+  }}
+  onFocus={() => setFocusedInput('amount')}
+  onBlur={() => setFocusedInput(null)}
+/>
+
+<select
+  name="category"
+  value={form.category}
+  onChange={handleChange}
+  required
+  style={styles.select}
+>
+  <option value="" disabled hidden>
+    Select Category
+  </option>
+  <option value="Food">Food</option>
+  <option value="Transport">Transport</option>
+  <option value="Shopping">Shopping</option>
+  <option value="Health">Health</option>
+  <option value="Entertainment">Entertainment</option>
+  <option value="Utilities">Utilities</option>
+  <option value="Others">Others</option>
+</select>
+
 
           <input
             type="text"
@@ -354,7 +361,7 @@ const Home = () => {
             style={styles.select}
           >
             <option value="All">All Categories</option>
-            <option value="Food">Food</option>
+            <option value=""></option>
             <option value="Transport">Transport</option>
             <option value="Shopping">Shopping</option>
             <option value="Health">Health</option>
